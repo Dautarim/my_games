@@ -9,5 +9,6 @@ const conexaoDB = mysql.createConnection({
     password: passwordDBuser,
     database: "db_games" 
 })
-
+//Conectar ao db
+conexaoDB.connect()
 export default conexaoDB
