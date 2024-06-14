@@ -5,8 +5,7 @@ class GamesController {
 
     async index(req,res) {
         const rows = await gamesRepository.findAll()
-        res.json(rows)
-    } //Listar dados
+        res.json(rows)} //Listar dados
 
     async show (req, res) {
         const row = await gamesRepository.findById(req.params.id)

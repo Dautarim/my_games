@@ -1,16 +1,11 @@
 import express from "express"
 import cors from "cors"
-import gameControl from "./app/controllers/gamesController.js"
+import router from "./router.js"
 
 const app = express()
-app.use(cors())
+app.use(cors())//pra remover o bloqueio a acesso por outros dominios
 app.use(express.json()) //Isso é indica ao servidor que a comunicação é por json
-
-app.get("/games",gameControl.index)// Get
-app.get("/games/:id",gameControl.show)//Get id
-app.post("/games",gameControl.store)//Post
-app.put("/games/:id",gameControl.update)//Put
-app.delete("/games/:id",gameControl.delete)//Delete
+app.use(router) //Usar o aquivo das rotas
 
 export default app
 
